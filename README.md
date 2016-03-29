@@ -1,2 +1,2 @@
-# Project_Euler_Practice
-Repo for Daily Practice of Project Euler Problems
+# Daily_Code_Challenge
+Repo for all the practice code written every day
