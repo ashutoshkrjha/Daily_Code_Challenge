@@ -3,10 +3,10 @@
 #include<stdio.h>
 #include<math.h>
 
-int ndigits(int n)
+long long ndigits(int n)
 {
     if(n==0) return 1;
-    int x=0;
+    long long x=0;
     while(n!=0)
     {
         n=n/10;
@@ -15,9 +15,9 @@ int ndigits(int n)
     return x;
 }
 
-int halfnum(int x, int nx)
+long long halfnum(long long x, long long nx)
 {
-    int i=0;
+    long long i=0;
     while(i != nx/2)
     {
         x=x/10;
@@ -26,19 +26,19 @@ int halfnum(int x, int nx)
 
     return x;
 }
-int karatmult(int x, int y)
+long long karatmult(long long x, long long y)
 {
-    int nx,ny,a,b,c,d,x0,x1,x2,x3;
+    long long nx,ny,a,b,c,d,x0,x1,x2,x3;
     nx=ndigits(x);
     ny=ndigits(y);
-    int N = (int)(fmax(nx, ny));
+    long long N = (long long)(fmax(nx, ny));
     N = (N/2) + (N%2);
     if(nx==1 | ny==1) return(x*y);
 
     a=halfnum(x,nx);
-    b=x%(int)(pow(10,nx/2));
+    b=x%(long long)(pow(10,nx/2));
     c=halfnum(y,ny);
-    d=y%(int)(pow(10,ny/2));
+    d=y%(long long)(pow(10,ny/2));
 
     x1=karatmult(a,c);
     x2=karatmult(b,d);
@@ -49,9 +49,9 @@ int karatmult(int x, int y)
 }
 int main()
 {
-    int x,y,ans; //The two numbers to multiply
+    long long x,y,ans; //The two numbers to multiply
     printf("Enter the two numbers with same digits to multiply:\n");
-    scanf("%d %d",&x,&y);
+    scanf("%lld %lld",&x,&y);
     ans=karatmult(x,y);
-    printf("The answer is %d",ans);
+    printf("The answer is %lld",ans);
 }
